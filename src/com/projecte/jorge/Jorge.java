@@ -1,7 +1,8 @@
 package com.projecte.jorge;
 
 public class Jorge {
-    public static void Nom(){
-        System.out.println("Hola, este es el projecte de Jorge");
+    private static final String NOM="Jorge";
+    public void MostrarNom(){
+        System.out.println("Hola, este es el projecte de "+this.NOM);
     }
 }

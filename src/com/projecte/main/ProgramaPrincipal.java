@@ -2,16 +2,22 @@ package com.projecte.main;
 import com.projecte.jorge.Jorge;
 import com.projecte.daniel.Daniel;
 import com.projecte.angel.Angel;
+import com.projecte.maikol.Maikol;
+
 
 public class ProgramaPrincipal {
 
 	public static void main(String[] args) {
 		Jorge p1 = new Jorge();
-		p1.Nom();
 		Daniel p2 = new Daniel();
-		p2.Nom();
 		Angel p3 = new Angel();
-		p3.Nom();
+		Maikol p4 = new Maikol();
+		
+		p1.MostrarNom();
+		p2.MostrarNom();
+		p3.MostrarNom();
+		p4.MostrarNom();
+		p1.MostrarNom();
 	}
 
 }
