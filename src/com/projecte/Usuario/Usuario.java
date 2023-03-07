@@ -1,4 +1,4 @@
-package Usuario;
+package com.projecte.Usuario;
 
 
 
@@ -13,7 +13,8 @@ public class Usuario {
 	private String contra;
 	private String dataNacimiento;
 	private String rol;
-	
+
+	private String poblacio;
 	private ArrayList<Pelicula> pelicules;
 	private ArrayList<Director> directors;
 	private ArrayList<Actor> actors;
@@ -102,7 +103,7 @@ public class Usuario {
 	
 	//constructor usuari
 	public Usuario(String nom, String apellidos, String correoElectronico, String contra, String dataNacimiento,
-			ArrayList<Pelicula> pelicules, ArrayList<Director> directors, ArrayList<Actor> actors) {
+			ArrayList<Pelicula> pelicules, ArrayList<Director> directors, ArrayList<Actor> actors, String poblacio, int id) {
 		super();
 		this.nom = nom;
 		this.apellidos = apellidos;
@@ -113,14 +114,27 @@ public class Usuario {
 		this.directors = directors;
 		this.actors = actors;
 		this.rol="ROL_USUARIO";
+		this.poblacio=poblacio;
 	}
-	
+	//costructor sin listas
+	public Usuario(String nom, String apellidos, String correoElectronico, String contra, String dataNacimiento,
+				  String poblacio, int id) {
+		super();
+		this.id = id;
+		this.nom = nom;
+		this.apellidos = apellidos;
+		this.correoElectronico = correoElectronico;
+		this.contra = contra;
+		this.dataNacimiento = dataNacimiento;
+		this.rol="ROL_USUARIO";
+		this.poblacio=poblacio;
+	}
 
 	//constructor admin
 	public Usuario(String nom, String apellidos, String correoElectronico, String contra, String dataNacimiento,
-			String rol,ArrayList<Pelicula> pelicules, ArrayList<Director> directors, ArrayList<Actor> actors) {
+			String rol,ArrayList<Pelicula> pelicules, ArrayList<Director> directors, ArrayList<Actor> actors, String poblacio, int id) {
 		super();
-		this.id = id++;
+		this.id = id;
 		this.nom = nom;
 		this.apellidos = apellidos;
 		this.correoElectronico = correoElectronico;
@@ -130,8 +144,21 @@ public class Usuario {
 		this.directors = directors;
 		this.actors = actors;
 		this.rol = rol;
+		this.poblacio=poblacio;
 	}
-	
+	//costructor sin listas
+	public Usuario(String nom, String apellidos, String correoElectronico, String contra, String dataNacimiento,
+				   String rol, String poblacio, int id) {
+		super();
+		this.id = id;
+		this.nom = nom;
+		this.apellidos = apellidos;
+		this.correoElectronico = correoElectronico;
+		this.contra = contra;
+		this.dataNacimiento = dataNacimiento;
+		this.rol = rol;
+		this.poblacio=poblacio;
+	}
 	
 
 	//metodos usuario

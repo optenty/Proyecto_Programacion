@@ -4,7 +4,7 @@ import com.projecte.jorge.Jorge;
 import com.projecte.daniel.Daniel;
 import com.projecte.angel.Angel;
 import com.projecte.maikol.Maikol;
-
+import com.projecte.Usuario.Usuario;
 import java.io.*;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -143,6 +143,27 @@ public class ProgramaPrincipal {
         FileWriter writer = new FileWriter(file, true);
         writer.write(usuari);
         writer.close();
+
+        //Ara creem l'objecte usuari en els datos anteriorment arreplegats, si rol == admin
+
+        if(rol.equals("admin")){
+            new Usuario(nom,cognoms,correu,contrasenya,dataNaixement,rol, poblacio, id);
+
+            }
+        else{
+            //constructor usuari
+            new Usuario(nom,cognoms,correu,contrasenya,dataNaixement, poblacio, id);
+        }
+
+
+
+
+
+
+
+
+
+
 
         System.out.println("Usuari registrat correctament.");
     }
