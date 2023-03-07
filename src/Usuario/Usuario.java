@@ -1,5 +1,8 @@
 package Usuario;
 
+
+
+
 import java.util.ArrayList;
 
 public class Usuario {
@@ -10,7 +13,7 @@ public class Usuario {
 	private String contra;
 	private String dataNacimiento;
 	private String rol;
-	//
+	
 	private ArrayList<Pelicula> pelicules;
 	private ArrayList<Director> directors;
 	private ArrayList<Actor> actors;
