@@ -4,13 +4,7 @@ import com.projecte.jorge.Jorge;
 import com.projecte.daniel.Daniel;
 import com.projecte.angel.Angel;
 import com.projecte.maikol.Maikol;
-<<<<<<< HEAD
 import com.projecte.Usuario.Usuario;
-=======
-/*
-import com.projecte.Usuario.Usuario;
-*/
->>>>>>> main
 import java.io.*;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -195,10 +189,6 @@ public class ProgramaPrincipal {
         writer.close();
 
         //Ara creem l'objecte usuari en els datos anteriorment arreplegats, si rol == admin, creem l'usuari amb el costructor de admin, sino el altre constructor
-<<<<<<< HEAD
-=======
-/*
->>>>>>> main
         if(rol.equals("admin")){
             new Usuario(nom,cognoms,correu,contrasenya,dataNaixement,rol, poblacio, id);
 
@@ -206,11 +196,7 @@ public class ProgramaPrincipal {
         else{
             //constructor usuari
             new Usuario(nom,cognoms,correu,contrasenya,dataNaixement, poblacio, id);
-<<<<<<< HEAD
         }
-=======
-        }*/
->>>>>>> main
 
 
 
