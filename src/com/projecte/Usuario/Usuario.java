@@ -1,3 +1,4 @@
+/*
 package com.projecte.Usuario;
 
 
@@ -209,3 +210,4 @@ public class Usuario {
 		
 	}
 	}
+*/
