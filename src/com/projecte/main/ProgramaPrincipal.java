@@ -4,7 +4,7 @@ import com.projecte.jorge.Jorge;
 import com.projecte.daniel.Daniel;
 import com.projecte.angel.Angel;
 import com.projecte.maikol.Maikol;
-
+import com.projecte.Usuario.Usuario;
 import java.io.*;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -33,6 +33,49 @@ public class ProgramaPrincipal {
 
     public void inici() throws IOException {
         Scanner entrada = new Scanner(System.in);
+        File archivoDirector = new File("src/com/projecte/listasGenerales/ListaDirector.txt");
+        if (!archivoDirector.exists()) {
+            try {
+                // Crear el archivo si no existe
+                archivoDirector.createNewFile();
+                System.out.println("Archivo creado correctamente");
+            } catch (IOException e) {
+                System.out.println("Error al crear el archivo");
+                e.printStackTrace();
+            }
+        } else {
+            System.out.println("El archivo que contiene las Listas Director ya existe, no se ha creado uno nuevo");
+        }
+        File archivoPeliculas = new File("src/com/projecte/listasGenerales/ListaPeliculas.txt");
+         if (!archivoPeliculas.exists()) {
+            try {
+                // Crear el archivo si no existe
+                archivoPeliculas.createNewFile();
+                System.out.println("Archivo creado correctamente");
+            } catch (IOException e) {
+                System.out.println("Error al crear el archivo");
+                e.printStackTrace();
+            }
+        } else {
+             System.out.println("El archivo que contiene las Listas Peliculas ya existe, no se ha creado uno nuevo");
+         }
+         File archivoActores = new File("src/com/projecte/listasGenerales/ListaActores.txt");
+          if (!archivoActores.exists()) {
+            try {
+                // Crear el archivo si no existe
+                archivoActores.createNewFile();
+                System.out.println("Archivo creado correctamente");
+            } catch (IOException e) {
+                System.out.println("Error al crear el archivo");
+                e.printStackTrace();
+            }
+        } else {
+              System.out.println("El archivo que contiene las Listas Actores ya existe, no se ha creado uno nuevo");
+          }
+
+          //Con esto creamos las listas si no están creadas, si están creadas se crean nuevas. Aparte, ya tenemos las variables
+          //que apuntan a los archivos File para trabajar con ellos
+
         menu(entrada);
 
 
@@ -116,6 +159,7 @@ public class ProgramaPrincipal {
             System.out.println("Introdueix la mateixa contrasenya dues vegades:");
             System.out.print("Contrasenya: ");
             contrasenya = input.nextLine();
+            //Mejorar la contraseña, que no esté vacía y tal
             System.out.print("Confirma la contrasenya: ");
             contrasenyaConfirmada = input.nextLine();
         } while (!contrasenya.equals(contrasenyaConfirmada));
@@ -144,7 +188,36 @@ public class ProgramaPrincipal {
         writer.write(usuari);
         writer.close();
 
+        //Ara creem l'objecte usuari en els datos anteriorment arreplegats, si rol == admin, creem l'usuari amb el costructor de admin, sino el altre constructor
+        if(rol.equals("admin")){
+            new Usuario(nom,cognoms,correu,contrasenya,dataNaixement,rol, poblacio, id);
+
+            }
+        else{
+            //constructor usuari
+            new Usuario(nom,cognoms,correu,contrasenya,dataNaixement, poblacio, id);
+        }
+
+
+
+
+
+
+
+
+
+
+
         System.out.println("Usuari registrat correctament.");
+
+        //Si s'ha iniciat correctament, es pasará un menú paregunt a esto:
+        // 1. Polsa 1 per a anyadir un autor en la llista
+        // 2. Polsa 2 per a anyadir una pelicula a la llista
+        // 3. Polsa 3 per a anyadir un director a la llista
+        // Depenent de el que polses, se't preguntarà si vols anyadir a la general o a la personal
+        // A la general pots anyadir el que vullgues però a la personal sols pots anyadir el que ja existeix de la general
+        // Si vols anyadir a la personal i no hi ha res en la general, es mostrará un missatge d'error i es sugerirá
+        // que introdueixques primer alguna ocurrència en la general.
     }
 
 
@@ -159,7 +232,6 @@ public class ProgramaPrincipal {
 
         try {
             BufferedReader br = new BufferedReader(new FileReader("Usuarios.txt"));
-            //pregunta pa optimisar
             while ((linea = br.readLine()) != null) {
                 String[] campos = linea.split(";;");
                 System.out.println(Arrays.toString(campos));
